@@ -1,28 +1,63 @@
-.caixa {
-    color: white;
-    display: inline-block;
-    line-height: 50px;
-    text-align: center;
-    vertical-align: top;
-  }
+
+ol {
+  background-color: yellow;
+}
+
+ol li:nth-child(odd) {
+  text-transform: uppercase;
+
+}
+
+ol li:nth-child(even) {
+  color: green;
+}
+
+h1, h3 {
+  color: red;
+}
+
+h1, h3 em {
+  font-size: 40px;
+  border: 3px solid black;
+}
+
+li {
+  font-size: 20px;
+}
+li em {
+  font-weight: 700;
   
-  .width-and-height {
-    height: 50px;
-    width: 50px;
-  }
-  
-  /* insira na classe abaixo um padding de 20px para aplicá-lo aos itens B, C e D */
-  .padding {padding: 20px;
-  
-  }
-  
-  /* insira na classe abaixo uma margem de 30px para aplicá-la aos itens C e D */
-  .margin { margin: 30px;
-  
-  }
-  
-  
-  /* insira na classe abaixo uma borda com valor '5px solid black' para aplicá-la ao item D */
-  .border {
-    
-  }
+}
+
+ul li:nth-of-type()  {
+  color: white;
+}
+
+#linguagens li:not(:nth-child(n+4)) {
+  color: rgb(0, 4, 255);
+}
+
+.pink {
+  background-color: pink;
+}
+
+#aliados li a:hover {
+  font-weight: 700;
+}
+
+#aliados li a[href*="stackoverflow"] {
+  color: orange
+}
+#aliados li a[href*="w3schools"] {
+  color: green;
+}
+
+#aliados li a[href*="mozilla"] {
+  color: black;
+}
+#aliados li a[href*="devdocs"] {
+    color: yellow;
+}
+#aliados li a[href*="trybe"] {
+  color: green;
+}
