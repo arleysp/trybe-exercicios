@@ -1,4 +1,4 @@
-let salarioBruto = 4500
+let salarioBruto = 2080
 let INSS;
 let impR
 if (salarioBruto <= 1556.94) {
