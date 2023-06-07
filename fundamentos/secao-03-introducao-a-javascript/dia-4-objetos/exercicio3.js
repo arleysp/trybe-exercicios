@@ -30,7 +30,7 @@ const school = {
     let valorTotal = 0;
     for (let index = 0; index < curso.lessons.length; index += 1) {
         valorTotal += curso.lessons[index].students;
-        
+
     } return valorTotal;
   }
   console.log(somaTotalDeEStudantes(school))
@@ -39,25 +39,32 @@ const school = {
   const verifyKey = (objt, chavosa) => {
     for (let index = 0; index < objt.lessons.length; index += 1) {
         if (objt.lessons[index][chavosa] === undefined) {
-        return false; 
+        return false;
         } else {
         return true;
         }
 
-    } 
+    }
 }
 
   console.log(verifyKey(school, 'jaca'))
 
-  const alterarTurno = (base, curso, valor) => {
-    for (let index = 0; index < base.length; index += 1) {
-        if base[index] === curso {
-            base.shift = valor
+const alterarTurno = (base, curso, valor) => {
+    let findcourse;
+    let tamanhoArrei = base.lessons.length
+    for (let index = 0; index < tamanhoArrei; index += 1) {
+      let element = base.lessons[index];
+      if (element.course === curso) {
+            findcourse = element;
+            break;
         }
     }
-
+    if (findcourse !== undefined) {
+      findcourse.shift = valor;
+      return findcourse
+    } else {
+      return 'Curso não encontrado.'
     }
+  }
 
-const alterarTurno('lessons', 'Python', 'Noite');
-
-console.log(school)
+console.log(alterarTurno(school, 'Python', 'Noite'))
