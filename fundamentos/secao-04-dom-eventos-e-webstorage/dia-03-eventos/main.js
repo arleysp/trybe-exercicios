@@ -17,13 +17,15 @@ for (let caixa of caixas) {
         caixaSelecionada.classList.remove('tech');
     }
     event.target.classList.add('tech');
-    event.target.addEventListener('mouseout', () => {
-      event.target.classList.remove('tech');
-    })
   });
 };
 
+function trocarTexto () {
+  const textoCaixa = document.querySelector('.tech');
+  textoCaixa.innerHTML = input.value;
+};
 
+input.addElementListener("change", trocarTexto);
 
 
 
