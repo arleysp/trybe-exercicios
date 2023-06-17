@@ -5,6 +5,28 @@ const input = document.getElementById('input');
 const myWebpage = document.getElementById('my-spotrybefy');
 
 
+firstLi.classList.add('caixas');
+secondLi.classList.add('caixas');
+thirdLi.classList.add('caixas');
+
+const caixas = document.querySelectorAll('.caixas');
+for (let caixa of caixas) {
+  caixa.addEventListener('mouseover', (event) => {
+    const caixaSelecionada = document.querySelector('.tech');
+    if (caixaSelecionada) {
+        caixaSelecionada.classList.remove('tech');
+    }
+    event.target.classList.add('tech');
+    event.target.addEventListener('mouseout', () => {
+      event.target.classList.remove('tech');
+    })
+  });
+};
+
+
+
+
+
 // 1. Copie esse arquivo e edite apenas ele.
 // 1.1. Note que uma das caixas está um pouco acima das outras. Por que isso ocorre?
 
