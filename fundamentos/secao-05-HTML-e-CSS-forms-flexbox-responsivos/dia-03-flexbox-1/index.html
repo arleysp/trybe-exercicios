@@ -3,40 +3,56 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flexbox - Justify Content</title>
-    <style>
-      .box {
-        color: #9069EF;
-        background-color: rgb(243, 243, 243);
-        border: 2px solid #232525;
-        font-size: 50px;
-        height: 60px;
-        margin: 10px 5px;
-        text-align: center;
-        width: 20%;
-      }
+    <title>CSS FLEXBOX - FLEX-GROW</title>
+<!-- -->
+<!-- ... -->
+<style>
+  .container {
+    display: flex;
+    height: 50px;
+    margin: auto;
+    width: 100%;
+  }
 
-      .box-container {
-        background-color: #0fa36b;
-        display: flex;
-        justify-content:space-between;
-        align-items: flex-end;
-        align-content: space-between;
-        height: 200px;
-        flex-flow: wrap;
-        /* ADICIONE AQUI SEUS TESTES */
-      }
-    </style>
+  .box {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /* Altere a propriedade flex-basis */
+    flex-basis: 1000px;
+    flex-grow: 0;
+    flex-shrink: 1;
+  }
 
+  .one {
+    background-color: #FBD26A;
+    list-style: none;
+  }
+
+  .two {
+    background-color: #FAA488;
+    list-style: none;
+  }
+
+  .three {
+    background-color: #9069EF;
+    list-style: none;
+  }
+
+  .four {
+    background-color: #006472;
+    list-style: none;
+  }
+</style>
+<!-- ... -->
+<!-- ... -->
   </head>
   <body>
-    <div class="box-container">
-      <div class="box">1</div>
-      <div class="box">2</div>
-      <div class="box">3</div>
-      <div class="box">4</div>
-      <div class="box">5</div>
-      <div class="box">6</div>
-    </div>
+    <ul class="container">
+      <li class="box one">1</li>
+      <li class="box two">2</li>
+      <li class="box three">3</li>
+      <li class="box four">4</li>
+    </ul>
   </body>
 </html>
