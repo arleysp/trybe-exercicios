@@ -1,16 +1,26 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
+  <title>Random Super Heroes</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="app"></div>
-  <script type="module" src="./src/main.js"></script>
+  <main id="app">
+    <div id="all">
+      <h1 id="title">Super Heroes</h1>
+      <div id="super-hero-data">
+        <img id="super-hero-img" src="https://psfonttk.com/wp-content/uploads/2020/10/Ponto-de-interrogacao-copiar.png"
+          alt="">
+        <p id="super-hero-name">Super hero name</p>
+      </div>
+      <button id="super-hero-button">Sortear</button>
+    </div>
+  </main>
+  <script type="module" src="main.js"></script>
 </body>
 
 </html>
