@@ -5,13 +5,12 @@ const superphoto = document.querySelector('#super-hero-img');
 const supername = document.querySelector('#super-hero-name');
 
 const BASE_URL = 'https://akabab.github.io/superhero-api/api';
-const MAX_HERO = 1000;
-const randomNumber = () => Math.floor(Math.random() * MAX_HERO);
+const MAX_HERO = 100;
+const randomNumber = () => Math.floor(Math.random() * MAX_HERO) + 1;
 
 button.addEventListener('click', (event) => {
   event.preventDefault();
-  const randomId = randomNumber;
-  fetch(`${BASE_URL}/id/${randomId}.json`)
+  fetch(`${BASE_URL}/id/${randomNumber()}.json`)
     .then((res) => res.json())
     .then((data) => {
       supername.innerHTML = data.name;
@@ -20,6 +19,6 @@ button.addEventListener('click', (event) => {
     .catch((error) => Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: error.message,
+      text: `Aconteceu um erro: ${error.message}`,
     }));
 });
