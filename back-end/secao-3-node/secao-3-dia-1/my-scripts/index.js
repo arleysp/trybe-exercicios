@@ -18,6 +18,7 @@ const getSimpsonById = async (id) => {
 
   return promise;
 }
+getSimpsonById('15').then((result) => console.log(result));
 
 const main = async () => {
   const result = await getSimpsonById('8');
@@ -59,7 +60,6 @@ const updateSimpson = async (id, name) => {
   await fs.writeFile('./simpsonFamily.json', JSON.stringify(result));
 };
 
-updateSimpson('8', 'Maggie Simpson');
 
 
 
