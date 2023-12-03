@@ -44,5 +44,42 @@ app.post('/movies', async (req, res) => {
   }
 });
 
+app.delete('/movies/:id', async (req, res) => {
+  try {
+    const movies = await readFile();
+    const { id } = req.params;
+    const index = movies.findIndex(movie => movie.id === +id);
+    movies.splice(index, 1);
+    const updatedMovies = JSON.stringify(movies);
+    await fsPromise.writeFile(pathMovies, updatedMovies);
+    res.status(204).end();
+  } catch (err) {
+    res.status(500).send({ message: err.message });
+  }
+});
+
+app.get('/search', async (req, res) => {
+  const movies = await readFile();
+  const { q } = req.query;
+  const filteredMovies = movies.filter(movie => movie.movie.includes(q));
+  res.status(200).send(filteredMovies);
+});
+
+app.put('/movies/:id', async (req, res) => {
+  try {
+    const movies = await readFile();
+    const { id } = req.params;
+    const { movie, price } = req.body;
+
+    const index = movies.findIndex(movie => movie.id === +id);
+    movies[index] = { id: +id, movie, price };
+    const updatedMovies = JSON.stringify(movies);
+    await fsPromise.writeFile(pathMovies, updatedMovies);
+    res.status(200).json(movies[index]);
+  } catch (err) {
+    return res.status(500).send({ message: err.message });
+  }
+});
+
 
 module.exports = app;
