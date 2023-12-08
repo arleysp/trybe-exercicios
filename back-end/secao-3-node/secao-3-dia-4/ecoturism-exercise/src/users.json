@@ -1,0 +1,13 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "arley@hotmail.com",
+            "password": 12345678,
+            "firstName": "Arley",
+            "phone": 3287546213,
+            "token": "f4a1c917a8624dae"
+        }
+    ],
+    "nextId": 2
+}
